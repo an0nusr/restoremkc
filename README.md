@@ -11,6 +11,11 @@ from 2002, and updates all the HTML and links so it can easily be browsed on
 your home computer! You can re-read all the old fics, with their 2000s
 era-backgrounds!
 
+*Update 5/14/2022: [swatkats.info](https://swatkats.info/) has started hosting
+an archive of the rebuilt site at
+[blacknet.swatkats.info](https://blacknet.swatkats.info/). If you just want to
+browse the archive, check out their version - no python required!*
+
 ## Running the tool
 
 This tool requires python3 (which is preinstalled on Mac and Linux, but Windows
