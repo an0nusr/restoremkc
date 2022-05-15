@@ -43,10 +43,14 @@ def fixIndexLinks(html: str):
 
 def makeRelativeLinks(html: str):
     # don't use mkcblacknet.org - use the server root
-    replace_str = r'\1="' + SERVER_ROOT + r'\3"'
+    replace_links = r'\1="' + SERVER_ROOT + r'\3"'
+    replace_bg = r'url(' + SERVER_ROOT + r'\1)'
     
     # fix links and images
-    return re.sub(r"(src|href|background)=\"(.*?)mkcblacknet\.org/(.*?)\"", replace_str, html)
+    html = re.sub(r"(src|href|background)=\"(.*?)mkcblacknet\.org/(.*?)\"", replace_links, html)
+
+    # fix backgrounds in CSS
+    return re.sub(r"url\(.*?mkcblacknet\.org/(.*?)\)", replace_bg, html)
 
 def main():
     files = Path(".").glob("**/*.html")
